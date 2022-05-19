@@ -46,7 +46,7 @@ return_statement: TK_RETURN logical_expr ';'
 if_statement: TK_IF '(' logical_expr ')' TK_BEGIN statements TK_END 
             ;
 
-assignation_statement : TK_LET TK_ID TK_ASIGNATION params ';'{variables.insert(make_pair($2, $4));}
+assignation_statement : TK_LET TK_ID TK_ASIGNATION logical_expr ';'{variables.insert(make_pair($2, $4));}
             |   TK_LET TK_ID '(' params ')' TK_ASIGNATION method_expresion 
                 ;
 
